@@ -55,5 +55,32 @@ def sum_series(n, first=1, second=1):
         return sum_series(n - 2, first, second) + sum_series(n - 1, first, second)
 
 
+def fib_iter(n):
+    """Return nth Fibonacci number via iteration."""
+    fib = [0, 1]
+    for num in range(2, n + 1):
+        fib.append(fib[-1] + fib[-2])
+    return fib[n]
+
+
+def lucas_iter(n):
+    """Return nth lucas number via iteration."""
+    lucas = [2, 1]
+    for num in range(2, n + 1):
+        lucas.append(lucas[-1] + lucas[-2])
+    return lucas[n - 1]
+
+
+def sum_series_iter(n, first=1, second=1):
+    """Return either Fibonacci or Lucas series by iteration depending on input."""
+    if n < 1:
+        return 0
+    else:
+        lucas = [first, second]
+        for num in range(2, n + 1):
+            lucas.append(lucas[-1] + lucas[-2])
+    return lucas[n - 1]
+
+
 if __name__ == '__main__':
     print(__doc__)
