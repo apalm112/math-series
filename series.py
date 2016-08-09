@@ -68,11 +68,18 @@ def lucas_iter(n):
     lucas = [2, 1]
     for num in range(2, n + 1):
         lucas.append(lucas[-1] + lucas[-2])
-    return lucas[n]
+    return lucas[n - 1]
 
 
-def sum_series_iter(n, m, result):
-    pass
+def sum_series_iter(n, first=1, second=1):
+    """Return either Fibonacci or Lucas series by iteration depending on input."""
+    if n < 1:
+        return 0
+    else:
+        lucas = [first, second]
+        for num in range(2, n + 1):
+            lucas.append(lucas[-1] + lucas[-2])
+    return lucas[n - 1]
 
 
 if __name__ == '__main__':
