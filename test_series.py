@@ -54,3 +54,30 @@ def test_sum_series_lucas(n, result):
     """Test sum_series with arguements 2, 1 should return Lucas."""
     from series import sum_series
     assert sum_series(n, 2, 1) == result
+
+@pytest.mark.parametrize('n, result', FIB_TABLE)
+def test_fib_iter(n, result):
+    """Test Fibonacci function"""
+    from series import fib_iter
+    assert fib_iter(n) == result
+
+
+@pytest.mark.parametrize('n, result', LUCAS_TABLE)
+def test_lucas_iter(n, result):
+    """Test Lucas function."""
+    from series import lucas_iter
+    assert lucas_iter(n) == result
+
+
+@pytest.mark.parametrize('n, result', FIB_TABLE)
+def test_sum_series_fib_iter(n, result):
+    """Test sum_series without arguements should return Fibonacci."""
+    from series import sum_series_iter
+    assert sum_series_iter(n) == result
+
+
+@pytest.mark.parametrize('n, result', LUCAS_TABLE)
+def test_sum_series_lucas_iter(n, result):
+    """Test sum_series with arguements 2, 1 should return Lucas."""
+    from series import sum_series_iter
+    assert sum_series_iter(n, 2, 1) == result
