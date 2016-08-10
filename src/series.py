@@ -1,36 +1,58 @@
 # -*- coding: utf-8 -*-
 """This module defines functions that implement mathematical series.
 
-fib(n):
+fibonacci(n):
 
-    Returns the nth value in the fibonacci series
+    Returns the nth value in the fibonacci series using recursion.
 
->>> fib(2)
+>>> fibonacci(2)
 1
 
 lucas(n):
 
-    Returns the nth value in the lucas series
+    Returns the nth value in the lucas series using recursion.
 
 >>> lucas(2)
 3
 
 sum_series(n)
 
-    Returns the nth value where the first value is optional arguement
+    Returns the nth value using recursion, where the first value is optional arguement,
     second arguement is the second optional arguement.
 
 >>> sum_series(3)
 2
+
+fibonacci_iter(n)
+
+    Returns the nth value in the fibonacci series using iteration.
+
+>>> fibonacci_iter(2)
+1
+
+lucas_iter(n):
+
+Returns the nth value in the lucas series using iteration.
+
+>>> lucas_iter(2)
+3
+
+sum_series_iter(n)
+
+Returns the nth value using iteration, where the first value is optional arguement,
+second arguement is the second optional arguement.
+
+>>> sum_series_iter(3)
+2
 """
 
 
-def fib(n):
+def fibonacci(n):
     """Return nth Fibonacci number."""
     if n < 2:
         return n
     else:
-        return fib(n - 2) + fib(n - 1)
+        return fibonacci(n - 2) + fibonacci(n - 1)
 
 
 def lucas(n):
@@ -55,12 +77,12 @@ def sum_series(n, first=1, second=1):
         return sum_series(n - 2, first, second) + sum_series(n - 1, first, second)
 
 
-def fib_iter(n):
+def fibonacci_iter(n):
     """Return nth Fibonacci number via iteration."""
-    fib = [0, 1]
+    fibonacci = [0, 1]
     for num in range(2, n + 1):
-        fib.append(fib[-1] + fib[-2])
-    return fib[n]
+        fibonacci.append(fibonacci[-1] + fibonacci[-2])
+    return fibonacci[n]
 
 
 def lucas_iter(n):

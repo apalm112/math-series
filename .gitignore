@@ -82,8 +82,11 @@ celerybeat-schedule
 venv/
 ENV/
 bin/
+include/
+lib/
+lib64/
 share/
-lib64
+LICENSE
 pip-selfcheck.json
 pyvenv.cfg
 
