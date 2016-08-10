@@ -17,8 +17,8 @@ lucas(n):
 
 sum_series(n)
 
-    Returns the nth value using recursion, where the first value is optional arguement,
-    second arguement is the second optional arguement.
+    Returns the nth value using recursion, where the first value is optional argument,
+    second argument is the second optional argument.
 
 >>> sum_series(3)
 2
@@ -39,8 +39,8 @@ Returns the nth value in the lucas series using iteration.
 
 sum_series_iter(n)
 
-Returns the nth value using iteration, where the first value is optional arguement,
-second arguement is the second optional arguement.
+Returns the nth value using iteration, where the first value is optional argument,
+second argument is the second optional argument.
 
 >>> sum_series_iter(3)
 2
@@ -91,7 +91,7 @@ def lucas_iter(n):
     return lucas[n]
 
 
-def sum_series_iter(n, first=1, second=1):
+def sum_series_iter(n, first=0, second=1):
     """Return either Fibonacci or Lucas series by iteration depending on input."""
     lucas = [first, second]
     for num in range(2, n + 1):
