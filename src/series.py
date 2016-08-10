@@ -57,21 +57,19 @@ def fibonacci(n):
 
 def lucas(n):
     """Return nth Lucas number."""
-    if n <= 1:
+    if n <= 0:
         return 2
-    elif n == 2:
+    elif n == 1:
         return 1
     else:
         return lucas(n - 2) + lucas(n - 1)
 
 
-def sum_series(n, first=1, second=1):
+def sum_series(n, first=0, second=1):
     """Return either Fibonacci or Lucas series depending on input."""
     if n < 1:
-        return 0
-    elif n <= 1:
         return first
-    elif n == 2:
+    elif n <= 1:
         return second
     else:
         return sum_series(n - 2, first, second) + sum_series(n - 1, first, second)
@@ -90,18 +88,15 @@ def lucas_iter(n):
     lucas = [2, 1]
     for num in range(2, n + 1):
         lucas.append(lucas[-1] + lucas[-2])
-    return lucas[n - 1]
+    return lucas[n]
 
 
 def sum_series_iter(n, first=1, second=1):
     """Return either Fibonacci or Lucas series by iteration depending on input."""
-    if n < 1:
-        return 0
-    else:
-        lucas = [first, second]
-        for num in range(2, n + 1):
-            lucas.append(lucas[-1] + lucas[-2])
-    return lucas[n - 1]
+    lucas = [first, second]
+    for num in range(2, n + 1):
+        lucas.append(lucas[-1] + lucas[-2])
+    return lucas[n]
 
 
 if __name__ == '__main__':
