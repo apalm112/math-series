@@ -29,10 +29,10 @@ LUCAS_TABLE = [
 
 
 @pytest.mark.parametrize('n, result', FIB_TABLE)
-def test_fib(n, result):
+def test_fibonacci(n, result):
     """Test Fibonacci function."""
-    from series import fib
-    assert fib(n) == result
+    from series import fibonacci
+    assert fibonacci(n) == result
 
 
 @pytest.mark.parametrize('n, result', LUCAS_TABLE)
@@ -43,7 +43,7 @@ def test_lucas(n, result):
 
 
 @pytest.mark.parametrize('n, result', FIB_TABLE)
-def test_sum_series_fib(n, result):
+def test_sum_series_fibonacci(n, result):
     """Test sum_series without arguements should return Fibonacci."""
     from series import sum_series
     assert sum_series(n) == result
@@ -57,10 +57,10 @@ def test_sum_series_lucas(n, result):
 
 
 @pytest.mark.parametrize('n, result', FIB_TABLE)
-def test_fib_iter(n, result):
+def test_fibonacci_iter(n, result):
     """Test Fibonacci function"""
-    from series import fib_iter
-    assert fib_iter(n) == result
+    from series import fibonacci_iter
+    assert fibonacci_iter(n) == result
 
 
 @pytest.mark.parametrize('n, result', LUCAS_TABLE)
